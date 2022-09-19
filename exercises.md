@@ -1,6 +1,6 @@
 # Chaincode Labs Exercises
 
-### 1. How To Build
+## 1. How To Build
 
 Q. Compile Bitcoin Core ([https://github.com/bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)). You can see doc/build-*.md for instructions on building the various elements.
 
@@ -19,23 +19,22 @@ bitcoind -datadir=/Volumes/Samsung_T5/Bitcoin -conf=/Volumes/Samsung_T5/Bitcoin
 bitcoind --conf=/Volumes/Samsung_T5/Bitcoin
 ```
 
-### Running Test
+## 2. Running Test
+Q. Run the unit and functional tests. Instructions on how to do that can be found here:
 
 ```bash
 test/functional/test_runner.py feature_rbf.py
 ```
 
-![Untitled](Chaincode%20Labs%20Exercises%207c60ae9662ce46a9a1eda15fd3689c9d/Untitled.png)
+![feature_rbf run](Pictures/example_test_run.png)
 
-### Complete Example Test
+## 3. Complete Example Test
+Q. Look at example_test.py in the functional test directory and try getting node 1 to mine another block, send it to node 2, and check that node 2 received it. In your response to this email, please include a link to a gist or code snippet that you used to complete this step.
+
 
 Code: [https://github.com/dawntyim/bitcoin/blob/chaincodelab-exercises/test/functional/example_test.py](https://github.com/dawntyim/bitcoin/blob/chaincodelab-exercises/test/functional/example_test.py)
 
 ```python
-```
-Exercises
-try getting node 1 to mine another block, send it to node 2, and check that node 2 received it.
-''' 
 
 self.generatetoaddress(self.nodes[1], 1, self.nodes[1].get_deterministic_priv_key().address)
 best_block = self.nodes[1].getblock(self.nodes[1].getbestblockhash())
@@ -55,4 +54,4 @@ self.sync_all()
 assert_equal(int(self.nodes[1].getbestblockhash(), 16), int(self.nodes[2].getbestblockhash(), 16))
 ```
 
-![Untitled](Chaincode%20Labs%20Exercises%207c60ae9662ce46a9a1eda15fd3689c9d/Untitled%201.png)
+![example_test_run](Pictures/feature_rbf_run.png)
