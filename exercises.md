@@ -26,7 +26,7 @@ Q. Run the unit and functional tests. Instructions on how to do that can be foun
 test/functional/test_runner.py feature_rbf.py
 ```
 
-![feature_rbf run](Pictures/example_test_run.png)
+![feature_rbf run](Pictures/feature_rbf_run.png)
 
 ## 3. Complete Example Test
 Q. Look at example_test.py in the functional test directory and try getting node 1 to mine another block, send it to node 2, and check that node 2 received it. In your response to this email, please include a link to a gist or code snippet that you used to complete this step.
@@ -54,4 +54,4 @@ self.sync_all()
 assert_equal(int(self.nodes[1].getbestblockhash(), 16), int(self.nodes[2].getbestblockhash(), 16))
 ```
 
-![example_test_run](Pictures/feature_rbf_run.png)
+![example_test_run](Pictures/example_test_run.png)
